@@ -1,4 +1,4 @@
-# 🚀 DICSA: Distributed In-Plane Cybersecurity Architecture for SDN-IoT
+# DICSA: Distributed In-Plane Cybersecurity Architecture for SDN-IoT
 
 ---
 
@@ -18,7 +18,7 @@ The system performs **early-stage detection in the data plane** and **intelligen
 ## 🧠 Architecture
 
 <p align="center">
-  <img src="main/architecture.png" width="700"/>
+  <img src="Docs/architecture.png" width="700"/>
 </p>
 
 ### Key Components

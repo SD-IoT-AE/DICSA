@@ -1,0 +1,88 @@
+# ===============================
+# DICSA Global Configuration File
+# ===============================
+
+system:
+  name: DICSA
+  version: 1.0
+  mode: "distributed"
+
+# ===============================
+# ISMU (In-Switch Monitoring Unit)
+# ===============================
+ismu:
+  flow_table_size: 1024
+  sliding_window: 6              # seconds
+  sampling_probability: 0.78
+
+  thresholds:
+    port_scan: 22                # Theta_scan
+    dos_packets: 520             # Theta_dos
+
+  adaptive:
+    alpha: 0.12
+
+  alert:
+    cooldown: 9                  # seconds
+
+# ===============================
+# TSCE (Deep Learning Model)
+# ===============================
+tsce:
+  model:
+    input_dim: 12
+    hidden_dim_1: 128
+    hidden_dim_2: 64
+    num_classes: 6
+
+  training:
+    learning_rate: 0.001
+    batch_size: 64
+    epochs: 20
+    dropout: 0.3
+
+  inference:
+    confidence_threshold: 0.6    # Gamma_conf
+
+  sequence:
+    window_size: 10
+
+# ===============================
+# AREM (Mitigation Engine)
+# ===============================
+arem:
+  thresholds:
+    high: 0.8
+    medium: 0.5
+
+  rules:
+    expiration_time: 30          # seconds
+
+# ===============================
+# CDCS (Synchronization)
+# ===============================
+cdcs:
+  sync_threshold: 0.7
+  peers:
+    - "http://localhost:5001"
+    - "http://localhost:5002"
+
+# ===============================
+# DATASETS
+# ===============================
+datasets:
+  cic_iot_2023:
+    path: "data/raw/cic_iot_2023.csv"
+
+  unsw_nb15:
+    path: "data/raw/unsw_nb15.csv"
+
+  ton_iot:
+    path: "data/raw/ton_iot.csv"
+
+# ===============================
+# LOGGING
+# ===============================
+logging:
+  level: "INFO"
+  file: "logs/dicsa.log"

@@ -18,7 +18,7 @@ The system performs **early-stage detection in the data plane** and **intelligen
 ## 🧠 Architecture
 
 <p align="center">
-  <img src="docs/architecture.png" width="700"/>
+  <img src="main/architecture.png" width="700"/>
 </p>
 
 ### Key Components
